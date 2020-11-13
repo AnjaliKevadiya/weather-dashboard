@@ -1,11 +1,10 @@
 
 var apiKey = "23a78a66b8e6dc546e2534b9c6379878";
-var cityName;
 
 $(document).ready(function() {
 
     $("#search-button").on("click", function() {
-        cityName = $("#search-value").val().trim();
+        var cityName = $("#search-value").val().trim();
 
         searchWeather(cityName);
 
@@ -39,6 +38,16 @@ function searchWeather(cityName) {
             card.append(cardBody);
 
             $("#today").append(card);
+
+
+            //Create City List
+            var card = $("<div>").addClass("card");
+            var cityUlEl = $("<ul>").addClass("list-group list-group-flush");
+            var cityLiEl = $("<li>").addClass("list-group-item").text(response.name);
+            
+            cityUlEl.append(cityLiEl);
+            card.append(cityUlEl);
+            $("#city-name").append(card);
         });    
     } else {
         //show alert please enter cityname to know weather

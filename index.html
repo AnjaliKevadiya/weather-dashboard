@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <header class="container-fluid">
+    <header class="container-fluid text-center">
         <h1>Weather Dashboard</h1>
     </header>
 
@@ -20,17 +20,20 @@
         <div class="row">
             <aside class="col-md-3 bg-light">
                 <h5>Search for a city</h5>
+
+                <div class="form-inline form-group">
+                    <input type="text" class="form-control" id="search-value" />
+                    <button class="btn btn-primary" id="search-button"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="" id="city-name"></div>
+
             </aside>
-            <div class="form-inline form-group">
-                <input type="text" class="form-control" id="search-value" />
-                <button class="btn btn-primary" id="search-button"><i class="fa fa-search"></i></button>
+            <div class="container col-md-9">
+                <div class="" id="today"></div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="" id="today"></div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
