@@ -1,3 +1,13 @@
+header {
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  color: white;
+  padding-top: 8px;
+}
+
 .span-inline {
   display: inline-block;
   margin: 5px;
