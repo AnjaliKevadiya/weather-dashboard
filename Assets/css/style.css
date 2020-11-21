@@ -12,3 +12,11 @@ header h1 {
   display: inline-block;
   margin: 5px;
 }
+
+.uvIndex {
+  color: white;
+  background-color: red;
+  width: 50px;
+  border-radius: 3px;
+  padding-left: 8px;
+}

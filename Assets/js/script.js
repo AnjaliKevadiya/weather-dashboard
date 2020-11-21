@@ -120,12 +120,16 @@ function getUVIndex(weatherResponse) {
 
                 var title = $("<h3>").addClass("card-title").text(titleName);
                 var icon = "<img src='https://openweathermap.org/img/w/" + weatherResponse.weather[0].icon + ".png'>";
+                title.append(icon);
+
                 var temp = $("<p>").addClass("card-text").text("Temperatre: " + weatherResponse.main.temp + " °F");
                 var humidity = $("<p>").addClass("card-text").text("Humidity:  " + weatherResponse.main.humidity + " %");
                 var wind = $("<p>").addClass("card-text").text("Wind Speed: " + weatherResponse.wind.speed + " MPH");
-                var uvIndex = $("<p>").addClass("card-text").text("UV Index: " + response.value);
+                var uvIndex = $("<p>").addClass("card-text").text("UV Index: ");
+                var label = $("<label>").addClass("uvIndex").text(response.value);
+                uvIndex.append(label);
 
-                cardBody.append(title, icon, temp, humidity, wind, uvIndex);
+                cardBody.append(title, temp, humidity, wind, uvIndex);
                 card.append(cardBody);
                 $("#today").append(card);    
             }
@@ -163,8 +167,8 @@ function forcastWeather(cityName) {
 
             var date = $("<h5>").addClass("card-title").text(formattedDate);
             var icon = "<img src='https://openweathermap.org/img/w/" + list.weather[0].icon + ".png'>";
-            var temp = $("<p>").addClass("card-title").text("Temp: " + tempInF.toFixed(2) + " °F");
-            var humidity = $("<p>").addClass("card-title").text("Humidity: " + list.main.humidity + "%");
+            var temp = $("<p>").addClass("card-title").text("Temperatre: " + tempInF.toFixed(2) + " °F");
+            var humidity = $("<p>").addClass("card-title").text("Humidity: " + list.main.humidity + " %");
         
             divBody.append(date, icon, temp, humidity);
             div.append(divBody);   
